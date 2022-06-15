@@ -1,13 +1,57 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: darkgray;
+    flex-flow: row nowrap;
+    display :flex;
 }
+.navbar{
+    width : 100%;
+    height: 130px;
+    flex-flow: row nowrap;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #111;
+    color: white;
+    padding: 10px 10px;
+    border: none;
+    display : flex;
+    position: fixed;
+    z-index: 999;
+    left : 0px;
+    top : 0px;
+}
+.logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+border-radius: 20%}
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navbuttons{
+    padding : 50px;
+}
+.outer{
+    left : 0;
+    top: 200px;
+    position: absolute;
+    display: flex;
+    flex-flow: column nowrap;
+}
+.main{
+    width : 75%;
+    padding: 10px;
+    background-color : darkgray;
+    flex-flow: column wrap;
+}
+.right {
+    width : 25%;
+    padding: 10px;
+    background-color: gray;
+    flex-flow: column nowrap;
+}
+.bottombar{
+    background-color : black ;
+    position : absolute;
+    width : 100%;
+    height: 150px;
+    bottom : -150px;
+    left: 0px;
 }
