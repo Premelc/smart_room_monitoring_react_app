@@ -1,7 +1,5 @@
-import logo from "./crying-black-guy-meme (1).gif";
-import './index.css';
-import './sidebar.css';
-import './popup.css';
+import logo from "./img/cry.gif";
+import './css/index.css';
 
 let flag = false;
 
@@ -63,13 +61,13 @@ function Navbar(){
     return ( <div className="navbar">
         <button className="openbtn" onClick={event => toggleNav()} id="openBtnId">☰ Quick Access</button>
         <div className="navbuttons">
-            HOME
+            <a href={"index.js"} >HOME</a>
         </div>
         <div className="navbuttons">
-            SEARCH
+            <a href={"#"} >SEARCH</a>
         </div>
         <div className="navbuttons">
-            DHMZ
+            <a href={"#"} >DHMZ</a>
         </div>
 
         <div className="logo">
@@ -77,15 +75,19 @@ function Navbar(){
         </div>
 
         <div className="navbuttons">
-            WARNINGS
+            <a href={"#"} >DHMZ</a>
         </div>
 
         <div className="navbuttons">
-            NOTIFICATIONS
+            <a href={"#"} >NOTIFICATIONS</a>
         </div>
 
         <div className="navbuttons">
-            ADRIA
+            <a href={"#"} >ADRIA</a>
+        </div>
+
+        <div className="navbuttons">
+            <a href={"#"}>LOG IN</a>
         </div>
     </div>);
 }

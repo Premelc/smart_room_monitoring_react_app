@@ -1,9 +1,10 @@
 body {
     background-color: darkgray;
-    flex-flow: row nowrap;
+    flex-flow: column nowrap;
     display :flex;
 }
 .navbar{
+    text-align: center;
     width : 100%;
     height: 130px;
     flex-flow: row nowrap;
@@ -19,20 +20,45 @@ body {
     left : 0px;
     top : 0px;
 }
+
+.navbar a:hover{
+
+}
+
+.navbar a:visited , a:link , a:active{
+    color: white;
+    text-decoration: none;
+}
 .logo img{
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-border-radius: 20%}
+    margin-left: 10px;
+    margin-right: 95px;
+    width: 90%;
+    height: 90%;
+    object-fit: contain;
+    border-radius: 20%
+}
 
 .navbuttons{
     padding : 50px;
 }
-.outer{
+.navbuttons:hover{
+    background-color: #444;
+    }
+.Outer{
     left : 0;
-    top: 200px;
+    top: 130px;
     position: absolute;
     display: flex;
+    flex-flow: row nowrap;
+    min-height: 100%;
+    min-width: 100%;
+}
+.left {
+    height : 100%;
+    width : 0%;
+    padding: 10px;
+    float: left;
+    background-color: yellow;
     flex-flow: column nowrap;
 }
 .main{
@@ -46,12 +72,4 @@ border-radius: 20%}
     padding: 10px;
     background-color: gray;
     flex-flow: column nowrap;
-}
-.bottombar{
-    background-color : black ;
-    position : absolute;
-    width : 100%;
-    height: 150px;
-    bottom : -150px;
-    left: 0px;
 }

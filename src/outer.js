@@ -1,6 +1,7 @@
-import './index.css';
-import './sidebar.css';
-import './popup.css';
+import './css/index.css';
+import './css/sidebar.css';
+import './css/popup.css';
+import {DataRepository} from "./DataRepository";
     var flag = false;
 
     function openNav() {
@@ -43,7 +44,13 @@ function fadeOut(element1, element2) {
 }
 
 
-    function openRoomArchiveStatusForm (){
+    async function openRoomArchiveStatusForm (){
+        const repository = new DataRepository();
+
+        const data = await repository.fetchData("005")
+
+        console.log("data in controller",data)
+
         closeNav();
         closeRoomStatusForm();
         document.getElementById("roomArchiveStatusForm").style.display = "block";
@@ -60,22 +67,21 @@ function fadeOut(element1, element2) {
         document.getElementById("roomStatusForm").style.display = "block";
     }
 
-function Outer(){
- return (
-     <div className="Outer" id="main">
+function Outer(props){
 
+ return (
+     <div>
+     <div className="Outer" id="main">
          <div id="mySidebar" className="sidebar">
              <a href="javascript:void(0)" className="closebtn" onClick={event => closeNav()}>×</a>
              <a href="#">About</a>
              <a href="#">Services</a>
              <a href="#">Clients</a>
-             <a href="#">Contact</a>
-             <a href="#" onClick={event => openRoomArchiveStatusForm()}>Room history</a>
+             <a href="contact.js">Contact</a>
+             <a href="#" onClick={async event => await openRoomArchiveStatusForm()}>Room history</a>
              <a href="#" onClick={event => openRoomStatusForm()}>Room status</a>
          </div>
-
-
-
+         <div className="main" id="middle">
              <div className="Popup">
                  <div className="formPopup" id="roomArchiveStatusForm">
                      <form action="PLACEHOLDER" className="formContainer">
@@ -100,7 +106,6 @@ function Outer(){
                          </button>
                      </form>
                  </div>
-
                  <div className="formPopup" id="roomStatusForm">
                      <form action="PLACEHOLDER" className="formContainer">
                          <h2>Check room status</h2>
@@ -112,109 +117,16 @@ function Outer(){
                          <button type="button" className="btn cancel" onClick={event => closeRoomStatusForm()}>Close</button>
                      </form>
                  </div>
-
              </div>
-
-         <div className="main" id="middle">
-
              <h1>MAIN ADRIA DATA</h1>
-             <p>How many times were you frustrated while looking out
-                 for a good collection of programming/algorithm/interview
-                 questions? What did you expect and what did you get?
-                 This portal has been created to provide well written,
-                 well thought and well-explained solutions for selected
-                 questions.
-             </p>
-             <h2>GeeksforGeeks</h2>
-             <p>GCET is an entrance test for the extensive classroom
-                 programme by GeeksforGeeks to build and enhance Data
-                 Structures and Algorithm concepts, mentored by Sandeep
-                 Jain (Founder & CEO, GeeksforGeeks).He has 7 years of
-                 teaching experience and 6 years of industry experience.
-             </p>
-             <h1>GeeksforGeeks</h1>
-             <p>How many times were you frustrated while looking out
-                 for a good collection of programming/algorithm/interview
-                 questions? What did you expect and what did you get?
-                 This portal has been created to provide well written,
-                 well thought and well-explained solutions for selected
-                 questions.
-             </p>
-             <h2>GeeksforGeeks</h2>
-             <p>GCET is an entrance test for the extensive classroom
-                 programme by GeeksforGeeks to build and enhance Data
-                 Structures and Algorithm concepts, mentored by Sandeep
-                 Jain (Founder & CEO, GeeksforGeeks).He has 7 years of
-                 teaching experience and 6 years of industry experience.
-             </p>
-             <h1>GeeksforGeeks</h1>
-             <p>How many times were you frustrated while looking out
-                 for a good collection of programming/algorithm/interview
-                 questions? What did you expect and what did you get?
-                 This portal has been created to provide well written,
-                 well thought and well-explained solutions for selected
-                 questions.
-             </p>
-             <h2>GeeksforGeeks</h2>
-             <p>GCET is an entrance test for the extensive classroom
-                 programme by GeeksforGeeks to build and enhance Data
-                 Structures and Algorithm concepts, mentored by Sandeep
-                 Jain (Founder & CEO, GeeksforGeeks).He has 7 years of
-                 teaching experience and 6 years of industry experience.
-             </p>
          </div>
 
          <div className="right" id="right">
              <h1>DHMZ DATA</h1>
-             <p>How many times were you frustrated while looking out
-                 for a good collection of programming/algorithm/interview
-                 questions? What did you expect and what did you get?
-                 This portal has been created to provide well written,
-                 well thought and well-explained solutions for selected
-                 questions.
-             </p>
-             <h2>GeeksforGeeks</h2>
-             <p>GCET is an entrance test for the extensive classroom
-                 programme by GeeksforGeeks to build and enhance Data
-                 Structures and Algorithm concepts, mentored by Sandeep
-                 Jain (Founder & CEO, GeeksforGeeks).He has 7 years of
-                 teaching experience and 6 years of industry experience.
-             </p>
-             <h1>GeeksforGeeks</h1>
-             <p>How many times were you frustrated while looking out
-                 for a good collection of programming/algorithm/interview
-                 questions? What did you expect and what did you get?
-                 This portal has been created to provide well written,
-                 well thought and well-explained solutions for selected
-                 questions.
-             </p>
-             <h2>GeeksforGeeks</h2>
-             <p>GCET is an entrance test for the extensive classroom
-                 programme by GeeksforGeeks to build and enhance Data
-                 Structures and Algorithm concepts, mentored by Sandeep
-                 Jain (Founder & CEO, GeeksforGeeks).He has 7 years of
-                 teaching experience and 6 years of industry experience.
-             </p>
-             <h1>GeeksforGeeks</h1>
-             <p>How many times were you frustrated while looking out
-                 for a good collection of programming/algorithm/interview
-                 questions? What did you expect and what did you get?
-                 This portal has been created to provide well written,
-                 well thought and well-explained solutions for selected
-                 questions.
-             </p>
-             <h2>GeeksforGeeks</h2>
-             <p>GCET is an entrance test for the extensive classroom
-                 programme by GeeksforGeeks to build and enhance Data
-                 Structures and Algorithm concepts, mentored by Sandeep
-                 Jain (Founder & CEO, GeeksforGeeks).He has 7 years of
-                 teaching experience and 6 years of industry experience.
-             </p>
-         </div>
-         <div className="bottombar">
-
          </div>
    </div>
+
+     </div>
  );
 }
 

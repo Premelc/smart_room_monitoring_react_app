@@ -1,0 +1,32 @@
+.bottombar{
+    background-color : black ;
+    position : absolute;
+    width : 100%;
+    height: 150px;
+    bottom : -150px;
+    left: 0px;
+    flex-flow: column nowrap;
+}
+
+.EmptyBot{
+    background-color: yellow;
+    z-index: 999;
+    width: 200px;
+    min-width: 30%;
+    min-height: 100%;
+    float: left;
+}
+
+.MainBot{
+    text-align: center;
+    min-height: 100%;
+    width: 200px;
+    flex-flow: column nowrap;
+}
+
+.MainBot img{
+    z-index: 999;
+    width: 10%;
+    object-fit: contain;
+    float: left;
+}
